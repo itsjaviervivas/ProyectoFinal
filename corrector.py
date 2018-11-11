@@ -1,4 +1,4 @@
-# -- coding: UTF-8 --
+ #-*-coding: UTF-8-*-
 #Este programa será nuestro Traductor.
 
 print("Bienvenidos al corrector ortográfico.")
@@ -23,13 +23,15 @@ if entrada2 == "si" or entrada == "si ":
 #si el usuario ingresa un no el programa le pedirá que ingrese el texto.
 elif entrada2 == "no" or entrada2 == "no ":
     entradaT = input("Ingrese el texto: " )
-    #separa las palabras y las imprime a modo de lista.
     e2 = entradaT.split(' ')
-    print (e2)
-    
+    listapalabras = []
+    #agrega las palabras a una lista
+    listapalabras.append(e2)
+    print (listapalabras)
 else:
     print("Ingrese una opción valida. Solo Si o No.")
     print("¡Hasta pronto!")
 
 
 print("(C) 2018 Ángela & Javier")
+
