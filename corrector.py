@@ -8,9 +8,6 @@ diccionario = open('diccionario.txt', encoding ='ISO-8859-1')
 leer = diccionario.read()
 listadiccionarios = leer.split("\n")
 
-for i in range(len(listadiccionarios)):
-    listadiccionarios[i] = listadiccionarios[i].split("/")[0]
-
 def distance(str1, str2):
     d =dict()
     for i in range(len(str1)+1):
