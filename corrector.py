@@ -1,5 +1,12 @@
  #-*-coding: UTF-8-*-
 #Este programa será nuestro Traductor.
+#Leer diccionario
+
+diccionario = open("diccionario.txt" , "r" )
+leer = diccionario.read()
+split = leer.split("\n")
+print (split)
+
 
 print("Bienvenidos al corrector ortográfico.")
 """El programa le pregunta al usuario como prefiere utilizar el programa."""
