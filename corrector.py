@@ -8,7 +8,8 @@ listadiccionarios = leer.split("\n")
 
 for i in range(len(listadiccionarios)):
     listadiccionarios[i] = listadiccionarios[i].split("/")[0]
-print(listadiccionarios[16])
+
+
     
 def revisar (diccionario, word):
     print(word)
@@ -24,8 +25,8 @@ entrada2 = entrada.lower()
 
 if entrada2 == "si" or entrada == "si ":
     #el usuario ingresa el nombre del archivo y el programa le agrega la extensión.
-            archivo = "texto"
-            arc = archivo+ ".txt"
+            
+            arc = "texto.txt"
             #el programa buscará el archivo y lo leerá.
             try :
                 my_file = open(arc, "r")
@@ -33,6 +34,9 @@ if entrada2 == "si" or entrada == "si ":
                 txt = mensaje.split(' ')
                 print (txt)
                 my_file.close()
+                for i in range(len(txt)):
+                    print(revisar(listadiccionarios, txt[i].lower()))
+        
             except TypeError:
                 print ("No hay ningún archivo con ese nombre.")
 #si el usuario ingresa un no el programa le pedirá que ingrese el texto.
@@ -41,6 +45,7 @@ elif entrada2 == "no" or entrada2 == "no ":
     e2 = entradaT.split(' ')
     for i in range(len(e2)):
         print(revisar(listadiccionarios, e2[i].lower()))
+        
 else:
     print("Ingrese una opción valida. Solo Si o No.")
     print("¡Hasta pronto!")
