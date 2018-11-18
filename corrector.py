@@ -2,6 +2,7 @@
 #Este programa será nuestro Traductor.
 #Leer diccionario
 import math
+import sys
 
 diccionario = open('diccionario.txt', encoding ='ISO-8859-1')
 leer = diccionario.read()
@@ -45,7 +46,7 @@ def revisar (diccionario, word):
 while True:
     print("Bienvenidos al corrector ortográfico.")
     """El programa le pregunta al usuario como prefiere utilizar el programa."""
-    entrada = input("¿El texto que quieres corregir es un archivo .txt?:  ")
+    entrada = input("Seleccione una opción: \nsi: archivo texto.txt\nno: archivo ingresado\nexit: salir del prodrama\n")
     #convierte todo lo que el usuario ingrese a minúscula.
     entrada2 = entrada.lower()
 
@@ -70,7 +71,8 @@ while True:
         e2 = entradaT.split(' ')
         for i in range(len(e2)):
             revisar(listadiccionarios, e2[i].lower())
-            
+    elif entrada2 == "exit":
+        sys.exit()
     else:
         print("Ingrese una opción valida. Solo Si o No.")
         print("¡Hasta pronto!")
