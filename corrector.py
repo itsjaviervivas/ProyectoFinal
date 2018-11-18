@@ -9,7 +9,7 @@ entrada2 = entrada.lower()
 
 if entrada2 == "si" or entrada == "si ":
     #el usuario ingresa el nombre del archivo y el programa le agrega la extensión.
-            archivo = input("¿Cómo se llama el archivo?: ")
+            archivo = "texto"
             arc = archivo+ ".txt"
             #el programa buscará el archivo y lo leerá.
             try :
