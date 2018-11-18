@@ -26,10 +26,9 @@ def revisar (diccionario, word):
     if word in diccionario:
         return True
     else:
-        print(diccionario[1])
-        print(distance(diccionario[1], word))
         variable = math.inf
         posicion = []
+        print("La palabra",word.upper(),"no se ha encontrado. Tenemos estas opciones: ")
         for i in range (len(diccionario)):
             actualDistance = distance(word, diccionario[i])
             if actualDistance == variable:
@@ -39,41 +38,42 @@ def revisar (diccionario, word):
                 posicion = [i]
         for i in range(len(posicion)):
             print(diccionario[posicion[i]], end=", ")
+        print()
+        print()
         return False
                 
+while True:
+    print("Bienvenidos al corrector ortográfico.")
+    """El programa le pregunta al usuario como prefiere utilizar el programa."""
+    entrada = input("¿El texto que quieres corregir es un archivo .txt?:  ")
+    #convierte todo lo que el usuario ingrese a minúscula.
+    entrada2 = entrada.lower()
 
-print("Bienvenidos al corrector ortográfico.")
-"""El programa le pregunta al usuario como prefiere utilizar el programa."""
-entrada = input("¿El texto que quieres corregir es un archivo .txt?:  ")
-#convierte todo lo que el usuario ingrese a minúscula.
-entrada2 = entrada.lower()
-
-if entrada2 == "si" or entrada == "si ":
-    #el usuario ingresa el nombre del archivo y el programa le agrega la extensión.
+    if entrada2 == "si" or entrada == "si ":
+        #el usuario ingresa el nombre del archivo y el programa le agrega la extensión.
+                
+                arc = "texto.txt"
+                #el programa buscará el archivo y lo leerá.
+                try :
+                    my_file = open(arc, "r")
+                    mensaje = my_file.read()
+                    txt = mensaje.split(' ')
+                    my_file.close()
+                    for i in range(len(txt)):
+                        revisar(listadiccionarios, txt[i].lower())
             
-            arc = "texto.txt"
-            #el programa buscará el archivo y lo leerá.
-            try :
-                my_file = open(arc, "r")
-                mensaje = my_file.read()
-                txt = mensaje.split(' ')
-                print (txt)
-                my_file.close()
-                for i in range(len(txt)):
-                    revisar(listadiccionarios, txt[i].lower())
-        
-            except TypeError:
-                print ("No hay ningún archivo con ese nombre.")
-#si el usuario ingresa un no el programa le pedirá que ingrese el texto.
-elif entrada2 == "no" or entrada2 == "no ":
-    entradaT = input("Ingrese el texto: " )
-    e2 = entradaT.split(' ')
-    for i in range(len(e2)):
-        revisar(listadiccionarios, e2[i].lower())
-        
-else:
-    print("Ingrese una opción valida. Solo Si o No.")
-    print("¡Hasta pronto!")
+                except TypeError:
+                    print ("No hay ningún archivo con ese nombre.")
+    #si el usuario ingresa un no el programa le pedirá que ingrese el texto.
+    elif entrada2 == "no" or entrada2 == "no ":
+        entradaT = input("Ingrese el texto: " )
+        e2 = entradaT.split(' ')
+        for i in range(len(e2)):
+            revisar(listadiccionarios, e2[i].lower())
+            
+    else:
+        print("Ingrese una opción valida. Solo Si o No.")
+        print("¡Hasta pronto!")
 
 
 print("(C) 2018 Ángela & Javier")
