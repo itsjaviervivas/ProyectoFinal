@@ -2,7 +2,7 @@
 #Este programa será nuestro Traductor.
 #Leer diccionario
 
-diccionario = open("diccionario.txt" , "r" )
+diccionario = open('diccionario.txt', encoding ='ISO-8859-1')
 leer = diccionario.read()
 listadiccionarios = leer.split("\n")
 
@@ -10,6 +10,11 @@ for i in range(len(listadiccionarios)):
     listadiccionarios[i] = listadiccionarios[i].split("/")[0]
 print(listadiccionarios[16])
     
+def revisar (diccionario, word):
+    print(word)
+    if word in diccionario:
+        return True
+    return False
 
 print("Bienvenidos al corrector ortográfico.")
 """El programa le pregunta al usuario como prefiere utilizar el programa."""
@@ -34,10 +39,8 @@ if entrada2 == "si" or entrada == "si ":
 elif entrada2 == "no" or entrada2 == "no ":
     entradaT = input("Ingrese el texto: " )
     e2 = entradaT.split(' ')
-    listapalabras = []
-    #agrega las palabras a una lista
-    listapalabras.append(e2)
-    print (listapalabras)
+    for i in range(len(e2)):
+        print(revisar(listadiccionarios, e2[i].lower()))
 else:
     print("Ingrese una opción valida. Solo Si o No.")
     print("¡Hasta pronto!")
