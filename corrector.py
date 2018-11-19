@@ -43,7 +43,7 @@ def revisar (diccionario, word):
 while True:
     print("Bienvenidos al corrector ortográfico.")
     """El programa le pregunta al usuario como prefiere utilizar el programa."""
-    entrada = input("Seleccione una opción: \nsi: archivo texto.txt\nno: archivo ingresado\nexit: salir del prodrama\n")
+    entrada = input("Seleccione una opción: \nsi: Archivo texto.txt\nno: Archivo Ingresado\nexit: Salir del programa\n")
     #convierte todo lo que el usuario ingrese a minúscula.
     entrada2 = entrada.lower()
 
