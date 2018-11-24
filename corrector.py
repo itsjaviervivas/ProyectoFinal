@@ -9,6 +9,7 @@ leer = diccionario.read()
 listadiccionarios = leer.split("\n")
 
 def distance(str1, str2):
+    """ """
     d =dict()
     for i in range(len(str1)+1):
         d[i]=dict()
