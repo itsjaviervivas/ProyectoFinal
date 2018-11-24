@@ -36,9 +36,16 @@ def revisar (diccionario, word):
                 variable = actualDistance
                 posicion = [i]
         for i in range(len(posicion)):
-            print(diccionario[posicion[i]], end=", ")
-        print()
-        print()
+            print(diccionario[posicion[i]], end=",")
+
+            respuesta = input("La palabra que necesitas, ¿Se encuetra en la lista de posibles palabras?")
+            if "si" == respuesta:
+                     lista = int(input("En que posicion se encuentra"))
+                     restar = lista-1
+                     buscar = diccionario[posicion[restar]]
+                     print (buscar)
+            
+
         return False
                 
 while True:
@@ -70,11 +77,7 @@ while True:
         e2 = e
         for i in range(len(e2)):
             revisar(listadiccionarios, e2[i].lower())
-            respuesta = input("La palabra que necesitas, ¿Se encuetra en la lista de posibles palabras?")
-            if "si" == respuesta:
-                 lista = int(input("En que posicion se encuentra"))
-                 restar = lista-1
-                 buscar = e[restar]
+
     
                  
                  
