@@ -66,9 +66,18 @@ while True:
     #si el usuario ingresa un no el programa le pedirá que ingrese el texto.
     elif entrada2 == "no" or entrada2 == "no ":
         entradaT = input("Ingrese el texto: " )
-        e2 = entradaT.split(' ')
+        e=entradaT.split(' ')
+        e2 = e
         for i in range(len(e2)):
             revisar(listadiccionarios, e2[i].lower())
+            respuesta = input("La palabra que necesitas, ¿Se encuetra en la lista de posibles palabras?")
+            if "si" == respuesta:
+                 lista = int(input("En que posicion se encuentra"))
+                 restar = lista-1
+                 buscar = e[restar]
+    
+                 
+                 
     elif entrada2 == "exit":
         sys.exit()
     else:
