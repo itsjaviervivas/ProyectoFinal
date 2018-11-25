@@ -44,7 +44,7 @@ def revisar (diccionario, word):
                 variable = actualDistance
                 posicion = [i]
         for i in range(len(posicion)):
-                print(diccionario[posicion[i]], end = "")
+                print(diccionario[posicion[i]], end = ".")
                 print()
         respuesta = input("La palabra que necesitas, ¿Se encuetra en la lista de posibles palabras? ")
         if "si" == respuesta:
