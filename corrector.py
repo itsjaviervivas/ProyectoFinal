@@ -110,5 +110,5 @@ while True:
         print("¡Hasta pronto!")
 
 
-print("(C) 2018 Ángela & Javier")
+print("(C) 2018 Ángela & Javier.")
 
