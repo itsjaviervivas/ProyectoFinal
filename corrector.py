@@ -44,7 +44,7 @@ def revisar (diccionario, word):
                 variable = actualDistance
                 posicion = [i]
         for i in range(len(posicion)):
-                print(diccionario[posicion[i]], end = ",")
+                print(diccionario[posicion[i]], end = "")
                 print()
         respuesta = input("La palabra que necesitas, ¿Se encuetra en la lista de posibles palabras? ")
         if "si" == respuesta:
@@ -52,16 +52,21 @@ def revisar (diccionario, word):
                                  restar = lista-1
                                  buscar = diccionario[posicion[restar]]
                                  correccion.append(buscar)
-                                
+        
     print()
     
 
 
-                
+               
 while True:
-    print("El texto quedó así:" , correctas , correccion)
+    general = correctas + correccion
+    print ("la corección es: " , end="")
+    for i in ((general)):
+        print(i, "" , end = "")
 
     print()
+    print()
+    
     print("Bienvenidos al corrector ortográfico.")
     """El programa le pregunta al usuario como prefiere utilizar el programa."""
     entrada = input("Seleccione una opción: \nsi: Archivo texto.txt\nno: Archivo Ingresado\nexit: Salir del programa\n")
