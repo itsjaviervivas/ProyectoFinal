@@ -52,7 +52,11 @@ def revisar (diccionario, word):
                                  restar = lista-1
                                  buscar = diccionario[posicion[restar]]
                                  correccion.append(buscar)
-        
+        elif "no"== respuesta:
+            print("En nuestro diccionario no se ecuentra la palabra que buscas")
+        else:
+            print("Ingresó una palabra invaldia, gracias por usar nuestro corrector")
+            sys.exit()
     print()
     
 
