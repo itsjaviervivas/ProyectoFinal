@@ -22,6 +22,7 @@ def distance(str1, str2):
     return d[len(str1)][len(str2)]
 
 
+
 correctas = []
 correccion= []
 def revisar (diccionario, word):
@@ -77,6 +78,15 @@ while True:
     #convierte todo lo que el usuario ingrese a minúscula.
     entrada2 = entrada.lower()
 
+    signos = "!\"#$%&’()*+,-./:;<=>?@[\\]^_‘{|}~"
+    def remover(s):
+         r = ""
+         for letra in s:
+            if letra not in signos:
+                 r += letra
+         return r
+
+
     if entrada2 == "si" or entrada == "si ":
         #el usuario ingresa el nombre del archivo y el programa le agrega la extensión.
                 
@@ -95,10 +105,13 @@ while True:
     #si el usuario ingresa un no el programa le pedirá que ingrese el texto.
     elif entrada2 == "no" or entrada2 == "no ":
         entradaT = input("Ingrese el texto: " )
-        e=entradaT.split(' ')
-        e2 = e
-        for i in range(len(e2)):
-            revisar(listadiccionarios, e2[i].lower())
+        remove = "",remover(entradaT)
+        print (remove)
+        e=remove.split(' ')
+         
+        
+        for i in range(len(e)):
+            revisar(listadiccionarios, e[i].lower())
 
     
                  
@@ -110,5 +123,5 @@ while True:
         print("¡Hasta pronto!")
 
 
-print("(C) 2018 Ángela & Javier.")
+print("(C) 2018 Ángela & Javier")
 
