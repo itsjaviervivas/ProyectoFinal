@@ -20,13 +20,21 @@ def distance(str1, str2):
         for j in range(1, len(str2)+1):
             d[i][j] = min(d[i][j-1]+1, d[i-1][j]+1, d[i-1][j-1]+(not str1[i-1] == str2[j-1]))
     return d[len(str1)][len(str2)]
-        
+
+
+correctas = []
+correccion= []
 def revisar (diccionario, word):
+
     if word in diccionario:
+        correctas.append(word)
+        print("la palabra", word.upper(), "está correctamente escrita")
         return True
     else:
+ 
         variable = math.inf
         posicion = []
+
         print("La palabra",word.upper(),"no se ha encontrado. Tenemos estas opciones: ")
         for i in range (len(diccionario)):
             actualDistance = distance(word, diccionario[i])
@@ -36,19 +44,24 @@ def revisar (diccionario, word):
                 variable = actualDistance
                 posicion = [i]
         for i in range(len(posicion)):
-            print(diccionario[posicion[i]], end=",")
+                print(diccionario[posicion[i]], end = ",")
+                print()
+        respuesta = input("La palabra que necesitas, ¿Se encuetra en la lista de posibles palabras? ")
+        if "si" == respuesta:
+                                 lista = int(input("En que posicion se encuentra: "))
+                                 restar = lista-1
+                                 buscar = diccionario[posicion[restar]]
+                                 correccion.append(buscar)
+                                
+    print()
+    
 
-            respuesta = input("La palabra que necesitas, ¿Se encuetra en la lista de posibles palabras?")
-            if "si" == respuesta:
-                     lista = int(input("En que posicion se encuentra"))
-                     restar = lista-1
-                     buscar = diccionario[posicion[restar]]
-                     print (buscar)
-            
 
-        return False
                 
 while True:
+    print("El texto quedó así:" , correctas , correccion)
+
+    print()
     print("Bienvenidos al corrector ortográfico.")
     """El programa le pregunta al usuario como prefiere utilizar el programa."""
     entrada = input("Seleccione una opción: \nsi: Archivo texto.txt\nno: Archivo Ingresado\nexit: Salir del programa\n")
