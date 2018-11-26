@@ -1,4 +1,4 @@
- #-*-coding: UTF-8-*-
+#-*-coding: UTF-8-*-
 #Este programa será nuestro Traductor.
 #Leer diccionario
 import math
@@ -9,7 +9,7 @@ leer = diccionario.read()
 listadiccionarios = leer.split("\n")
 
 def distance(str1, str2):
-    """Esta función coge 2 strings y los compara, el primero str es el que ingresa el usuario, el segundo es el que se encuentra en nuestro diccionario, cada una tendrá una comparación, entre mayor similitud menor será su distancia, por lo tanto cogerá las palabras con menor distancia y se las mostrará al usuario."""
+    """Esta función coge 2 strings y los compara. El primero str es el que ingresa el usuario. El segundo es el que se encuentra en nuestro diccionario, cada una tendrá una comparación, entre mayor similitud menor será su distancia, por lo tanto cogerá las palabras con menor distancia y se las mostrará al usuario. Esta función solo calcula la distancia."""    
     d =dict()
     for i in range(len(str1)+1):
         d[i]=dict()
@@ -26,13 +26,12 @@ def distance(str1, str2):
 correctas = []
 correccion= []
 def revisar (diccionario, word):
-
+    """La función revisar toma como parametros al diccionario y las palabras a revisar. Con la implementación de la distancia de Levenshtein se sugerirán palabras para corregirlas. Esta función corrige de una vez con lo que el usiario seleccione."""
     if word in diccionario:
         correctas.append(word)
-        print("la palabra", word.upper(), "está correctamente escrita")
+        print("La palabra", word.upper(), "está correctamente escrita.")
         return True
     else:
- 
         variable = math.inf
         posicion = []
 
@@ -49,14 +48,14 @@ def revisar (diccionario, word):
                 print()
         respuesta = input("La palabra que necesitas, ¿Se encuetra en la lista de posibles palabras? ")
         if "si" == respuesta:
-                                 lista = int(input("En que posicion se encuentra: "))
+                                 lista = int(input("¿En qué posicion se encuentra?: "))
                                  restar = lista-1
                                  buscar = diccionario[posicion[restar]]
                                  correccion.append(buscar)
         elif "no"== respuesta:
-            print("En nuestro diccionario no se ecuentra la palabra que buscas")
+            print("En nuestro diccionario no se ecuentra la palabra que buscas.")
         else:
-            print("Ingresó una palabra invaldia, gracias por usar nuestro corrector")
+            print("Ingresó una palabra inváldia. Gracias por usar nuestro corrector.")
             sys.exit()
     print()
     
@@ -65,7 +64,7 @@ def revisar (diccionario, word):
                
 while True:
     general = correctas + correccion
-    print ("la corección es: " , end="")
+    print ("La corección es: " , end="")
     for i in ((general)):
         print(i, "" , end = "")
 
@@ -74,7 +73,7 @@ while True:
     
     print("Bienvenidos al corrector ortográfico.")
     """El programa le pregunta al usuario como prefiere utilizar el programa."""
-    entrada = input("Seleccione una opción: \nsi: Archivo texto.txt\nno: Archivo Ingresado\nexit: Salir del programa\n")
+    entrada = input("Seleccione una opción: \nsi: Archivo texto.txt\nno: Ingresar Texto\nexit: Salir del programa\n")
     #convierte todo lo que el usuario ingrese a minúscula.
     entrada2 = entrada.lower()
 
@@ -91,7 +90,7 @@ while True:
         #el usuario ingresa el nombre del archivo y el programa le agrega la extensión.
                 
                 arc = "texto.txt"
-                #el programa buscará el archivo y lo leerá.
+                """El programa buscará el archivo y lo leerá."""
                 try :
                     my_file = open(arc, "r")
                     mensaje = my_file.read()
@@ -102,8 +101,8 @@ while True:
             
                 except TypeError:
                     print ("No hay ningún archivo con ese nombre.")
-    #si el usuario ingresa un no el programa le pedirá que ingrese el texto.
     elif entrada2 == "no" or entrada2 == "no ":
+        """Si el usuario ingresa un no el programa le pedirá que ingrese el texto."""
         entradaT = input("Ingrese el texto: " )
         remove = remover(entradaT)
         print (remove)
