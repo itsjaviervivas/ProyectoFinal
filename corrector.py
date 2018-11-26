@@ -9,7 +9,7 @@ leer = diccionario.read()
 listadiccionarios = leer.split("\n")
 
 def distance(str1, str2):
-    """ """
+    """Esta función coge 2 strings y los compara, el primero str es el que ingresa el usuario, el segundo es el que se encuentra en nuestro diccionario, cada una tendrá una comparación, entre mayor similitud menor será su distancia, por lo tanto cogerá las palabras con menor distancia y se las mostrará al usuario."""
     d =dict()
     for i in range(len(str1)+1):
         d[i]=dict()
@@ -105,7 +105,7 @@ while True:
     #si el usuario ingresa un no el programa le pedirá que ingrese el texto.
     elif entrada2 == "no" or entrada2 == "no ":
         entradaT = input("Ingrese el texto: " )
-        remove = "",remover(entradaT)
+        remove = remover(entradaT)
         print (remove)
         e=remove.split(' ')
          
